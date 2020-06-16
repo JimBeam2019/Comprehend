@@ -1,0 +1,39 @@
+{
+  "name": "comprehend",
+  "version": "1.0.0",
+  "description": "Test for Comprehend.",
+  "main": "index.js",
+  "repository": "https://github.com/JimBeam2019/Comprehend.git",
+  "author": "JimBeam2019 <bingking68@hotmail.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "babel-watch index.js"
+  },
+  "dependencies": {
+    "@babel/core": "^7.10.2",
+    "@babel/polyfill": "^7.10.1",
+    "@babel/runtime": "^7.10.2",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "@babel/plugin-transform-runtime": "^7.10.1",
+    "@babel/preset-env": "^7.10.2",
+    "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.1.0",
+    "babel-preset-stage-0": "^6.24.1",
+    "babel-watch": "^7.0.0",
+    "eslint": "^7.2.0",
+    "eslint-config-airbnb": "^18.1.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.21.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-lodash": "^7.1.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.20.0",
+    "eslint-plugin-react-hooks": "^4.0.4",
+    "prettier": "^2.0.5"
+  }
+}
