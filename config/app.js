@@ -1,5 +1,6 @@
 import express from 'express';
 
+import ComprehendRoutes from '../routes/ComprehendRoutes';
 /**
  *
  *
@@ -23,6 +24,10 @@ class App {
   config() {
     this.app.use(express.json());
     this.app.use(express.urlencoded({ extended: false }));
+
+    const comprehendRouter = new ComprehendRoutes().router;
+
+    this.app.use('/', comprehendRouter);
   }
 }
 
