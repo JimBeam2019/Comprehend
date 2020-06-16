@@ -1,0 +1,41 @@
+version: '3'
+
+services:
+  node:
+    image: node:12
+    user: node
+    working_dir: /usr/src/comprehend
+    environment:
+      - NODE_ENV=test
+    command: yarn run start
+    volumes:
+      - .:/usr/src/comprehend
+    ports:
+      - "4200:4200"
+
+  postgresql:
+    image: postgres:10.8
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: michaeldemerjian
+      POSTGRES_PASSWORD: payroll
+      # PGDATA: /var/lib/postgresql/data/pgdata
+      # POSTGRES_PASSWORD: postgres
+    volumes:
+      - postgresql:/var/lib/postgresql
+      - data:/var/lib/postgresql/data
+
+  pgadmin4:
+    image: dpage/pgadmin4
+    restart: always
+    ports: 
+      - "80:80"
+    environment: 
+      PGADMIN_DEFAULT_EMAIL: admin@symply.com
+      PGADMIN_DEFAULT_PASSWORD: payroll
+
+volumes:
+  postgresql: 
+  data:
