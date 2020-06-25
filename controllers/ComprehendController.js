@@ -29,11 +29,45 @@ export class ComprehendController {
   /**
    *
    *
+   * @param {*} { LanguageCode = 'en', Text = '' }
    * @returns
    * @memberof ComprehendController
    */
-  getComprehend() {
-    return this.comprehend;
+  async getKeyPhrases({ LanguageCode = 'en', Text = '' }) {
+    return this.comprehend.detectKeyPhrases({ LanguageCode, Text }).promise();
+  }
+
+  /**
+   *
+   *
+   * @param {*} { LanguageCode = 'en', Text = '' }
+   * @returns
+   * @memberof ComprehendController
+   */
+  async getSentiment({ LanguageCode = 'en', Text = '' }) {
+    return this.comprehend.detectSentiment({ LanguageCode, Text }).promise();
+  }
+
+  /**
+   *
+   *
+   * @param {*} { LanguageCode = 'en', Text = '' }
+   * @returns
+   * @memberof ComprehendController
+   */
+  async getNamedEntities({ LanguageCode = 'en', Text = '' }) {
+    return this.comprehend.detectEntities({ LanguageCode, Text }).promise();
+  }
+
+  /**
+   *
+   *
+   * @param {*} { LanguageCode = 'en', Text = '' }
+   * @returns
+   * @memberof ComprehendController
+   */
+  async getSyntax({ LanguageCode = 'en', Text = '' }) {
+    return this.comprehend.detectSyntax({ LanguageCode, Text }).promise();
   }
 }
 
