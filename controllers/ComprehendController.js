@@ -1,6 +1,5 @@
 import AWS from 'aws-sdk';
 
-import logger from '../config/logger';
 import '../config/config';
 
 /**
